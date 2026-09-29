@@ -1,4 +1,6 @@
+import './styles/base.css';
 import { getSettings, getPages} from "./api.js"
+import {hero} from "./blocks/hero/hero";
 
 async function start() {
   try{
@@ -7,6 +9,8 @@ async function start() {
     getPages(location.pathname)
   ]);
   document.title = `${page.title} - ${setting.siteName}`
+  const heroBlock = page.blocks.find((block)=> block.type ==='hero');
+  app.innerHTML = hero(heroBlock);
 
   console.log(setting,page);
   
