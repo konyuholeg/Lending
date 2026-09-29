@@ -6,7 +6,7 @@ async function start() {
     getSetting(),
     getPages(location.pathname)
   ]);
-  document.title = ${page.title} - ${setting.siteName}
+  document.title = '${page.title} - ${setting.siteName}'
 
   console.log(setting,page);
   
