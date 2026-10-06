@@ -1,7 +1,7 @@
 import "./hero.css"
-export function hero({anchor ,badge ,title , subtitle , image: {src , alt}, buttons}){
+export function hero({type ,badge ,title , subtitle , image: {src , alt}, buttons}){
 return `
-    <section class="hero" id="${anchor}">
+    <section class="hero" id="${type}">
    <div class="hero__content">
     <span class="hero__badge">${badge}</span>
     <h1 class="hero__title">${title}</h1>
@@ -13,7 +13,7 @@ return `
 
     </div>
    </div>
-   <img class="hero__image" src="${src}" alt="${alt}"
+   <img class="hero__image" src="${src}" alt="${alt}">
  
   </section>
   `;

@@ -12,7 +12,7 @@ async function start() {
   
   app.innerHTML = `<main>${renderBlokcs(page.blocks)}</main>`
 
-  console.log(setting,page);
+  // console.log(setting,page);
   
   } catch(error){
     app.textContent = `Something went wrong: ${error.message}`
