@@ -1,6 +1,6 @@
 import './styles/base.css';
 import { getSettings, getPages} from "./api.js"
-import {hero} from "./blocks/hero/hero";
+import { renderBlokcs } from "./render.js";
 
 async function start() {
   try{
@@ -9,13 +9,13 @@ async function start() {
     getPages(location.pathname)
   ]);
   document.title = `${page.title} - ${setting.siteName}`
-  const heroBlock = page.blocks.find((block)=> block.type ==='hero');
-  app.innerHTML = hero(heroBlock);
+  
+  app.innerHTML = `<main>${renderBlokcs(page.blocks)}</main>`
 
   console.log(setting,page);
   
   } catch(error){
-    AudioParamMap.textContent = 'Something went wrong: ${error.message}'
+    app.textContent = `Something went wrong: ${error.message}`
   }
 }
 
